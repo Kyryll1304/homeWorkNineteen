@@ -1,9 +1,11 @@
-const exp = function (num, degree) {
-  if (degree === 0) {
-    return 1;
+function pow(x, n) {
+  if (n == 1) {
+    return x;
+  } else if (n < 0) {
+    return Math.pow(x, n);
   } else {
-    return num * exp(num, degree - 1);
+    return x * pow(x, n - 1);
   }
-};
+}
 
-console.log(exp(10, 24));
+console.log(pow(2, -2));
